@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORBY - AI Career Companion</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="aurora aurora-one" aria-hidden="true"></div>
+  <div class="aurora aurora-two" aria-hidden="true"></div>
+
+  <nav class="platform-nav" aria-label="ORBY navigation">
+    <button type="button" data-next="welcome">Home</button>
+    <button type="button" data-next="applicationDashboard">Application Dashboard</button>
+  </nav>
+
+  <main class="app-shell">
+    <section class="hero section active" id="welcome" aria-labelledby="welcome-title">
+      <div class="hero-copy">
+        <p class="eyebrow">ORBY Stage 1 Vision Prototype</p>
+        <h1 id="welcome-title">Meet the companion that orbits your career search.</h1>
+        <p class="hero-text">
+          Orby quietly learns who you are, scans opportunities, and returns with matches that feel aligned.
+          Fewer roles. Better fit. Less overwhelm.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-action" data-next="onboarding">Begin with Orby</button>
+          <button class="ghost-action" data-next="applicationDashboard">Open Dashboard</button>
+        </div>
+      </div>
+
+      <aside class="orby-stage" aria-label="Animated Orby companion">
+        <div class="orby-wrap calm" id="orby" aria-live="polite">
+          <div class="trail trail-one"></div>
+          <div class="trail trail-two"></div>
+          <div class="orbit orbit-back"></div>
+          <div class="orb">
+            <div class="shine"></div>
+            <div class="face">
+              <span class="eye left-eye"></span>
+              <span class="eye right-eye"></span>
+            </div>
+          </div>
+          <div class="orbit orbit-front"></div>
+          <div class="thinking-moon"></div>
+          <div class="sparkle sparkle-one"></div>
+          <div class="sparkle sparkle-two"></div>
+        </div>
+        <p class="orby-line" id="orbyLine">I am here. We can make the search feel smaller.</p>
+      </aside>
+
+      <section class="state-lab panel" aria-labelledby="state-lab-title">
+        <div>
+          <p class="eyebrow">Orby State System</p>
+          <h2 id="state-lab-title">Preview companion states</h2>
+        </div>
+        <div class="state-controls" role="group" aria-label="Preview Orby states">
+          <button class="state-button active" data-state="calm">Calm</button>
+          <button class="state-button" data-state="searching">Search</button>
+          <button class="state-button" data-state="thinking">Analyze</button>
+          <button class="state-button" data-state="match">Match</button>
+          <button class="state-button" data-state="returning">Return</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="section panel-grid" id="onboarding" aria-labelledby="onboarding-title">
+      <div class="panel intro-panel">
+        <p class="eyebrow">Step 1 - Start Softly</p>
+        <h2 id="onboarding-title">How does your search feel today?</h2>
+        <p>Choose the mode that feels closest. This helps Orby respond with the right pace and tone.</p>
+      </div>
+
+      <div class="mood-grid" role="group" aria-label="Job search mood">
+        <button class="mood-card selected" data-mood="Steady">
+          <span>Steady</span>
+          <small>I know what I want. Keep me focused.</small>
+        </button>
+        <button class="mood-card" data-mood="Exploring">
+          <span>Exploring</span>
+          <small>I am open, curious, and scanning.</small>
+        </button>
+        <button class="mood-card" data-mood="Uncertain">
+          <span>Uncertain</span>
+          <small>I need help making sense of options.</small>
+        </button>
+      </div>
+
+      <div class="flow-actions">
+        <button class="ghost-action" data-next="welcome">Back</button>
+        <button class="primary-action" data-next="profile">Shape my profile</button>
+      </div>
+    </section>
+
+    <section class="section profile-section" id="profile" aria-labelledby="profile-title">
+      <div class="panel">
+        <p class="eyebrow">Step 2 - Mock Profile</p>
+        <h2 id="profile-title">Tell Orby what should matter.</h2>
+        <p>This prototype does not process, upload, or store private CV data. The fields below are used only in this browser session to create a believable demo profile.</p>
+      </div>
+
+      <form class="profile-form" id="profileForm">
+        <label>
+          Target role
+          <input name="role" type="text" value="Graduate Research Analyst" placeholder="e.g. Junior Product Analyst">
+        </label>
+        <label>
+          Career stage
+          <select name="stage">
+            <option>Graduate / entry level</option>
+            <option>Career changer</option>
+            <option>Final-year student</option>
+            <option>Early professional</option>
+          </select>
+        </label>
+        <label>
+          Location preference
+          <input name="location" type="text" value="Birmingham, London, or remote" placeholder="e.g. London or remote">
+        </label>
+        <label>
+          Work style
+          <select name="workStyle">
+            <option>Hybrid preferred</option>
+            <option>Remote preferred</option>
+            <option>On-site is okay</option>
+            <option>Flexible</option>
+          </select>
+        </label>
+        <label>
+          Driving licence
+          <select name="drivingLicence">
+            <option>Not specified</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </label>
+        <label>
+          Degree grade / expected grade
+          <select name="degreeGrade">
+            <option>Not specified</option>
+            <option>First</option>
+            <option>2:1</option>
+            <option>2:2</option>
+            <option>Other / not yet known</option>
+          </select>
+        </label>
+        <label>
+          Willing to travel for work
+          <select name="willingToTravel">
+            <option>Not specified</option>
+            <option>Yes</option>
+            <option>Limited</option>
+            <option>No</option>
+          </select>
+        </label>
+        <label>
+          Work eligibility / visa notes
+          <input name="workEligibility" type="text" placeholder="Example: UK right to work, need sponsorship, unsure, or prefer not to say.">
+        </label>
+        <label class="wide">
+          What matters most
+          <textarea name="priorities" rows="3" placeholder="Training, supportive team, meaningful work, growth path">Training, supportive team, realistic entry requirements, meaningful research-led work</textarea>
+        </label>
+        <label class="wide">
+          Skills or background
+          <textarea name="skills" rows="3" placeholder="Research, writing, Excel, Python, customer insight">Research methods, data analysis, scientific writing, Excel, stakeholder communication</textarea>
+        </label>
+        <label class="wide">
+          Languages
+          <span class="field-help">Add languages and level if relevant.</span>
+          <input name="languages" type="text" placeholder="Example: French native, Spanish C1, English fluent, Arabic conversational">
+        </label>
+        <label class="wide">
+          Extra requirements or important notes
+          <span class="field-help">Add anything ORBY should consider, such as visa/work eligibility, relocation plans, remote-only needs, specific constraints, industries to avoid, or personal priorities.</span>
+          <textarea name="extraRequirements" rows="3" placeholder="Example: I need remote roles because I plan to live abroad, I need visa sponsorship, I cannot work weekends, or I want roles linked to biomedical science."></textarea>
+        </label>
+        <div class="cv-input wide">
+          <label>
+            Paste CV text
+            <span class="field-help">Optional. This stays in your browser and is only used for simulated profile extraction.</span>
+            <textarea name="cvText" id="cvText" rows="6" placeholder="Paste a CV summary, experience, education, projects, or skills here."></textarea>
+          </label>
+          <div class="cv-actions">
+            <label class="file-control">
+              Upload .txt CV locally
+              <input name="cvFile" id="cvFile" type="file" accept=".txt,text/plain">
+            </label>
+            <button type="button" class="ghost-action" id="useDemoCv">Use demo CV</button>
+          </div>
+          <p class="field-help" id="cvStatus">PDF/DOCX parsing is future support. Stage 1 reads plain text files locally only.</p>
+        </div>
+        <div class="form-actions wide">
+          <button type="button" class="ghost-action" data-next="onboarding">Back</button>
+          <button type="submit" class="primary-action">Let Orby analyze</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section journey-section" id="collectProfileSignals" aria-labelledby="collect-title">
+      <div class="journey-copy panel">
+        <p class="eyebrow">Step 3 - Profile Signals</p>
+        <h2 id="collect-title">ORBY is gathering your signals.</h2>
+        <p>Your direction, skills, priorities, CV text, and constraints are being held together before any matching begins.</p>
+        <div class="analysis-progress" aria-label="Profile signal collection progress">
+          <span></span>
+        </div>
+        <p id="collectionStatus" hidden>Receiving your profile signals...</p>
+      </div>
+      <div class="journey-orby-host" id="collectOrbyHost">
+        <div class="signal-folder" id="signalFolder">
+          <span>Profile signals</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section review-section" id="profileReview" aria-labelledby="review-title">
+      <div class="review-main">
+        <div class="panel review-header-panel">
+          <div>
+            <p class="eyebrow">Step 4 - Career Signal</p>
+            <h2 id="review-title">How ORBY understands you</h2>
+            <p>ORBY built your career signal. Review this before search, and correct anything that does not feel right.</p>
+          </div>
+          <div class="review-orby-host" id="reviewOrbyHost"></div>
+        </div>
+        <div class="review-list structured-review" id="profileReviewList"></div>
+      </div>
+
+      <div class="flow-actions">
+        <button class="ghost-action" id="editProfile">Edit profile</button>
+        <button class="primary-action" id="startSearch">Start search with ORBY</button>
+      </div>
+    </section>
+
+    <section class="section journey-section" id="searchJourney" aria-labelledby="journey-title">
+      <div class="journey-copy panel">
+        <p class="eyebrow">Step 5 - ORBY Journey</p>
+        <h2 id="journey-title">ORBY is scanning the market.</h2>
+        <p id="journeyStatus">Looking for roles that match your career signal.</p>
+        <div class="analysis-progress" aria-label="Mock search journey progress">
+          <span id="journeyProgress"></span>
+        </div>
+      </div>
+      <div class="journey-orby-host" id="journeyOrbyHost">
+        <button class="result-packet" id="resultPacket" type="button" hidden>
+          <span>ORBY's return packet</span>
+          <strong>Open results</strong>
+        </button>
+      </div>
+    </section>
+
+    <section class="section dashboard-section" id="dashboard" aria-labelledby="dashboard-title">
+      <div class="dashboard-header">
+        <div>
+          <p class="eyebrow">Step 4 - Curated Matches</p>
+          <h2 id="dashboard-title">A few roles worth your attention.</h2>
+          <p>ORBY selected the strongest realistic-fit roles from the current job set. Review the score, salary, fit explanation, and any gaps before deciding what to save, dismiss, or prepare.</p>
+        </div>
+        <div class="quality-meter">
+          <span>Quality over quantity</span>
+          <strong id="selectedMatchCount">4 selected</strong>
+        </div>
+      </div>
+
+      <p class="job-pool-summary" id="jobPoolSummary">ORBY searched the local demo job pool, filtered inactive or needs-checking roles, and returned the strongest matches.</p>
+
+      <div class="job-grid" id="jobGrid"></div>
+
+      <aside class="tracker panel">
+        <div class="tracker-header">
+          <p class="eyebrow">Application Memory</p>
+          <h3>What Orby remembers in Stage 1</h3>
+          <p id="trackerText">Save or dismiss a role to see the prototype respond. No data leaves this page.</p>
+        </div>
+        <div class="tracker-stats">
+          <span><strong id="savedCount">0</strong> saved</span>
+          <span><strong id="prepCount">0</strong> prep</span>
+          <span><strong id="dismissedCount">0</strong> dismissed</span>
+        </div>
+        <button class="ghost-action tracker-open" type="button" data-next="applicationDashboard">Open Application Dashboard</button>
+      </aside>
+    </section>
+
+    <section class="section application-dashboard-section" id="applicationDashboard" aria-labelledby="application-dashboard-title">
+      <div class="dashboard-header">
+        <div>
+          <p class="eyebrow">Application Dashboard</p>
+          <h2 id="application-dashboard-title">Your ORBY application workspace.</h2>
+          <p>Review roles you saved or moved into prep. This workspace is separate from the current matches page, so your selected roles can accumulate across searches.</p>
+        </div>
+        <div class="quality-meter">
+          <span>Local demo memory</span>
+          <strong id="applicationMemoryTotal">0 roles</strong>
+        </div>
+      </div>
+
+      <p class="job-pool-summary">For this MVP, your application memory is stored locally on this browser. CV text and uploaded files are not stored here.</p>
+
+      <div class="application-dashboard-actions">
+        <button class="ghost-action" type="button" data-next="welcome">Home</button>
+        <button class="primary-action" type="button" data-next="dashboard">Back to current matches</button>
+      </div>
+
+      <div class="application-dashboard-empty" id="applicationDashboardEmpty">
+        Your ORBY dashboard will collect roles you save or prepare across searches.
+      </div>
+
+      <div class="memory-workspace" id="memoryWorkspace" aria-live="polite">
+        <div class="memory-groups application-memory-groups">
+          <section class="memory-group" id="savedMemoryGroup" aria-labelledby="savedMemoryTitle">
+            <h3 id="savedMemoryTitle">Saved roles</h3>
+            <div class="memory-list" id="savedMemoryList"></div>
+          </section>
+          <section class="memory-group" id="prepMemoryGroup" aria-labelledby="prepMemoryTitle">
+            <h3 id="prepMemoryTitle">Prep roles</h3>
+            <div class="memory-list" id="prepMemoryList"></div>
+          </section>
+        </div>
+        <section class="memory-group closed-memory-group" id="closedMemoryGroup" aria-labelledby="closedMemoryTitle">
+          <h3 id="closedMemoryTitle">Past outcomes</h3>
+          <div class="outcome-groups">
+            <div>
+              <h4>Offers received</h4>
+              <div class="memory-list" id="offerMemoryList"></div>
+            </div>
+            <div>
+              <h4>Rejected applications</h4>
+              <div class="memory-list" id="rejectedMemoryList"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="seededJobs.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
